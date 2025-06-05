@@ -68,7 +68,7 @@ export DEBUG=${NEPHIO_DEBUG:-$(get_metadata nephio-setup-debug "false")}
 [[ $DEBUG != "true" ]] || set -o xtrace
 
 RUN_E2E=${NEPHIO_RUN_E2E:-$(get_metadata nephio-run-e2e "false")}
-REPO=${NEPHIO_REPO:-$(get_metadata nephio-test-infra-repo "https://github.com/nephio-project/test-infra.git")}
+REPO=${NEPHIO_REPO:-$(get_metadata nephio-test-infra-repo "https://github.com/pgDuarte/test-infra.git")}
 BRANCH=${NEPHIO_BRANCH:-$(get_metadata nephio-test-infra-branch "main")}
 NEPHIO_USER=${NEPHIO_USER:-$(get_metadata nephio-user "${USER:-ubuntu}")}
 NEPHIO_CATALOG_REPO_URI=${NEPHIO_CATALOG_REPO_URI:-$(get_metadata nephio-catalog-repo-uri "https://github.com/nephio-project/catalog.git")}
