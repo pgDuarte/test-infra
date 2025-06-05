@@ -35,19 +35,19 @@
           extraPortMappings:
             - containerPort: 6443
               hostPort: 6443
-              listenAddress: "10.200.201.89"
+              listenAddress: "0.0.0.0"
               protocol: TCP
           kubeadmConfigPatches:
             - |
               kind: InitConfiguration
               nodeRegistration:
                 kubeletExtraArgs:
-                  node-ip: "10.200.201.89"
+                  node-ip: "0.0.0.0"
             - |
               kind: ClusterConfiguration
               apiServer:
                 certSANs:
-                  - "10.200.201.89"
+                  - "0.0.0.0"
       {% if lookup('ansible.builtin.env', 'DOCKER_REGISTRY_MIRRORS') %}
       containerdConfigPatches:
         - |-
