@@ -32,6 +32,10 @@
           extraMounts:
             - hostPath: /var/run/{{ container_engine }}.sock
               containerPath: /var/run/{{ container_engine }}.sock
+            - containerPort: 6443
+              hostPort: 6443
+              listenAddress: "0.0.0.0"
+              protocol: TCP
       {% if lookup('ansible.builtin.env', 'DOCKER_REGISTRY_MIRRORS') %}
       containerdConfigPatches:
         - |-
