@@ -32,6 +32,7 @@
           extraMounts:
             - hostPath: /var/run/{{ container_engine }}.sock
               containerPath: /var/run/{{ container_engine }}.sock
+          extraPortMappings:
             - containerPort: 6443
               hostPort: 6443
               listenAddress: "0.0.0.0"
